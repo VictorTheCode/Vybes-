@@ -14,7 +14,9 @@ const Home = () => {
       },
       onError: (error) => {
         console.error("Failed to invoke background job:", error);
-        toast.error(error.message || "Failed to invoke background job. Please try again.");
+        toast.error(
+          error.message || "Failed to invoke background job. Please try again."
+        );
       },
     })
   );
@@ -24,7 +26,7 @@ const Home = () => {
         disabled={invoke.isPending}
         onClick={() => invoke.mutate({ text: "Victor" })}
       >
-        Invoke Background Job
+        Invoke Background Job.
       </Button>
     </div>
   );
