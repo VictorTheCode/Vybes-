@@ -12,6 +12,10 @@ const Home = () => {
       onSuccess: () => {
         toast.success("Background job invoked!");
       },
+      onError: (error) => {
+        console.error("Failed to invoke background job:", error);
+        toast.error(error.message || "Failed to invoke background job. Please try again.");
+      },
     })
   );
   return (
